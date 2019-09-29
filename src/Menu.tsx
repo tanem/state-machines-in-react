@@ -5,7 +5,6 @@ import { useMachine } from '@xstate/react'
 import { motion, Transition, useAnimation, Variants } from 'framer-motion'
 import Mousetrap from 'mousetrap'
 import * as React from 'react'
-import { useEffect } from 'react'
 import { Machine } from 'xstate'
 import { Button } from './Button'
 
@@ -78,7 +77,7 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
     }
   })
 
-  useEffect(() => {
+  React.useEffect(() => {
     const key = 'esc'
     Mousetrap.bind(key, () => {
       send('CLOSE')
@@ -89,7 +88,7 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
     }
   }, [send])
 
-  useEffect(() => {
+  React.useEffect(() => {
     setStatus(current.value)
   }, [setStatus, current.value])
 

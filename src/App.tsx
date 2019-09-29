@@ -2,14 +2,13 @@
 
 import { jsx } from '@emotion/core'
 import * as React from 'react'
-import { useState } from 'react'
 import { Container } from './Container'
 import { Content } from './Content'
 import { Menu } from './Menu'
 import { MenuStatus } from './MenuStatus'
 
 export const App: React.FC = () => {
-  const [menuStatus, setMenuStatus] = useState()
+  const [menuStatus, setMenuStatus] = React.useState()
 
   return (
     <Container>
