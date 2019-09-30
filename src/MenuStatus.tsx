@@ -14,6 +14,7 @@ export const MenuStatus: React.FC<Props> = ({ children }) => (
       color: rebeccapurple;
       padding: 1rem;
     `}
+    data-testid="menu-status"
   >
     {children}
   </div>

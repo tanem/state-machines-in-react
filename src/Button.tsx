@@ -6,9 +6,10 @@ import * as React from 'react'
 interface Props {
   children: React.ReactNode
   onClick: () => void
+  testId: string
 }
 
-export const Button: React.FC<Props> = ({ children, onClick }) => (
+export const Button: React.FC<Props> = ({ children, onClick, testId }) => (
   <button
     css={css`
       background-color: #1f1d25;
@@ -25,6 +26,7 @@ export const Button: React.FC<Props> = ({ children, onClick }) => (
         background-color: #8f6aff;
       }
     `}
+    data-testid={testId}
     onClick={onClick}
   >
     {children}

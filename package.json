@@ -4,13 +4,17 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "10.0.17",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.2.0",
     "@types/jest": "24.0.18",
     "@types/mousetrap": "1.6.3",
     "@types/node": "12.7.8",
     "@types/react": "16.9.3",
     "@types/react-dom": "16.9.1",
     "@xstate/react": "0.7.1",
+    "codecov": "^3.6.1",
     "framer-motion": "1.6.7",
+    "jest": "^24.9.0",
     "mousetrap": "1.6.3",
     "prettier": "1.18.2",
     "react": "16.10.0",
@@ -38,6 +42,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{ts,tsx}",
+      "!src/{index.tsx,react-app-env.d.ts,serviceWorker.ts}",
+      "!<rootDir>/node_modules/"
     ]
   }
 }

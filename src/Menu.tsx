@@ -125,6 +125,7 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
         onClick={() => {
           send(nextMessage)
         }}
+        testId="menu-button"
       >
         {label}
       </Button>
