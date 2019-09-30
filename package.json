@@ -12,6 +12,7 @@
     "@types/react": "16.9.3",
     "@types/react-dom": "16.9.1",
     "@xstate/react": "0.7.1",
+    "codecov": "^3.6.1",
     "framer-motion": "1.6.7",
     "jest": "^24.9.0",
     "mousetrap": "1.6.3",
@@ -41,6 +42,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{ts,tsx}",
+      "!src/{index.tsx,react-app-env.d.ts,serviceWorker.ts}",
+      "!<rootDir>/node_modules/"
     ]
   }
 }
