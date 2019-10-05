@@ -1,5 +1,14 @@
 {
   "name": "state-machines-in-react",
+  "description": "A small React, xstate and Framer Motion demo.",
+  "keywords": [
+    "animation",
+    "framer-motion",
+    "react",
+    "state-machine",
+    "typescript",
+    "xstate"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
