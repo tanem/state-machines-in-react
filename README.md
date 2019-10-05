@@ -13,7 +13,11 @@ This is a rewrite of the final example from [@geddski](https://github.com/geddsk
 - [Framer Motion](https://www.framer.com/motion/).
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro).
 
-## Quick Start
+## Live Example
+
+[CodeSandbox](https://codesandbox.io/s/github/tanem/state-machines-in-react/tree/master).
+
+## Running Locally
 
 Run `npm start`, then open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
