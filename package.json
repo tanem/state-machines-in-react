@@ -29,7 +29,7 @@
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.3",
+    "typescript": "3.6.4",
     "xstate": "4.6.7"
   },
   "scripts": {
