@@ -22,7 +22,7 @@
     "@types/react-dom": "16.9.4",
     "@xstate/react": "0.8.1",
     "codecov": "3.6.1",
-    "framer-motion": "1.6.17",
+    "framer-motion": "1.16.18",
     "jest": "24.9.0",
     "mousetrap": "1.6.3",
     "prettier": "1.19.1",
