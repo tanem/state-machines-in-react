@@ -1,9 +1,18 @@
 {
   "extends": [
-    "config:base",
+    "config:js-app",
+    ":rebaseStalePrs",
     ":automergeAll",
-    ":disableRateLimiting",
-    ":pinVersions",
-    ":rebaseStalePrs"
+    ":masterIssue"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "stabilityDays": 3,
+  "packageRules": [
+    {
+      "sourceUrlPrefixes": ["https://github.com/tanem/"],
+      "stabilityDays": 0
+    }
   ]
 }
