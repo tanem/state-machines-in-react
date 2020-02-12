@@ -23,7 +23,7 @@
     "@xstate/react": "0.8.1",
     "codecov": "3.6.5",
     "framer-motion": "1.8.4",
-    "jest": "24.9.0",
+    "jest": "25.1.0",
     "mousetrap": "1.6.5",
     "prettier": "1.19.1",
     "react": "16.12.0",
