@@ -1,4 +1,4 @@
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render, waitFor } from '@testing-library/react'
 import * as React from 'react'
 import { App } from './App'
 
@@ -13,24 +13,24 @@ test('clicking open/close button', async () => {
 
   fireEvent.click(menuButton)
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('opening'),
     expect(menuButton).toHaveTextContent('close')
   ])
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('open'),
     expect(menuButton).toHaveTextContent('close')
   ])
 
   fireEvent.click(menuButton)
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('closing'),
     expect(menuButton).toHaveTextContent('open')
   ])
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('closed'),
     expect(menuButton).toHaveTextContent('open')
   ])
@@ -44,19 +44,19 @@ test('escape should close the menu', async () => {
 
   fireEvent.click(menuButton)
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('open'),
     expect(menuButton).toHaveTextContent('close')
   ])
 
   fireEvent.keyDown(document.body, { key: 'Escape', keyCode: 27, which: 27 })
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('closing'),
     expect(menuButton).toHaveTextContent('open')
   ])
 
-  await wait(() => [
+  await waitFor(() => [
     expect(menuStatus).toHaveTextContent('closed'),
     expect(menuButton).toHaveTextContent('open')
   ])
