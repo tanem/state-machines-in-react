@@ -56,8 +56,11 @@ test('escape should close the menu', async () => {
     expect(menuButton).toHaveTextContent('open')
   ])
 
-  await waitFor(() => [
-    expect(menuStatus).toHaveTextContent('closed'),
-    expect(menuButton).toHaveTextContent('open')
-  ])
+  await waitFor(
+    () => [
+      expect(menuStatus).toHaveTextContent('closed'),
+      expect(menuButton).toHaveTextContent('open')
+    ],
+    { timeout: 2000 }
+  )
 })

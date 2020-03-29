@@ -14,7 +14,6 @@ interface Props {
 
 const transition: Transition = {
   damping: 20,
-  duration: 0.5,
   stiffness: 300,
   type: 'spring'
 }
@@ -70,7 +69,7 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
   const openMenu = () => controls.start('open')
   const closeMenu = () => controls.start('closed')
 
-  const [current, send] = useMachine(stateMachine, {
+  const [state, send] = useMachine(stateMachine, {
     services: {
       openMenu,
       closeMenu
@@ -89,11 +88,11 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
   }, [send])
 
   React.useEffect(() => {
-    setStatus(current.value)
-  }, [setStatus, current.value])
+    setStatus(state.value)
+  }, [setStatus, state.value])
 
   const nextMessage =
-    current.matches('open') || current.matches('opening') ? 'CLOSE' : 'OPEN'
+    state.value === 'open' || state.value === 'opening' ? 'CLOSE' : 'OPEN'
 
   let label = nextMessage === 'OPEN' ? 'open' : 'close'
 
