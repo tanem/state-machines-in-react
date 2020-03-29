@@ -3,4 +3,5 @@ notifications:
   email: false
 script:
   - npm t -- --coverage --watchAll=false
-  - $(npm bin)/codecov
+after_success:
+  - bash <(curl -s https://codecov.io/bash
