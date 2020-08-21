@@ -12,7 +12,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/core": "10.0.34",
+    "@emotion/core": "10.0.35",
     "@testing-library/jest-dom": "5.11.3",
     "@testing-library/react": "10.4.8",
     "@types/jest": "26.0.10",
