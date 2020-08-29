@@ -25,7 +25,7 @@
     "jest": "26.4.2",
     "jest-environment-jsdom-sixteen": "1.0.3",
     "mousetrap": "1.6.5",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.3",
