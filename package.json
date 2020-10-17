@@ -14,7 +14,7 @@
   "dependencies": {
     "@emotion/core": "10.0.35",
     "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "11.0.4",
+    "@testing-library/react": "11.1.0",
     "@types/jest": "26.0.14",
     "@types/mousetrap": "1.6.4",
     "@types/node": "12.12.21",
