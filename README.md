@@ -1,6 +1,6 @@
 # state-machines-in-react
 
-[![build status](https://img.shields.io/travis/tanem/state-machines-in-react/master.svg?style=flat-square)](https://travis-ci.org/tanem/state-machines-in-react)
+[![build status](https://img.shields.io/github/workflow/status/tanem/state-machines-in-react/CI?style=flat-square)](https://github.com/tanem/state-machines-in-react/actions?query=workflow%3ACI)
 [![coverage status](https://img.shields.io/codecov/c/github/tanem/state-machines-in-react.svg?style=flat-square)](https://codecov.io/gh/tanem/state-machines-in-react)
 
 > A small React, xstate and Framer Motion demo.
