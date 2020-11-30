@@ -1,10 +1,8 @@
-/** @jsx jsx */
-
-import { css, jsx } from '@emotion/core'
 import { useMachine } from '@xstate/react'
 import { motion, Transition, useAnimation, Variants } from 'framer-motion'
 import Mousetrap from 'mousetrap'
 import * as React from 'react'
+import styled from 'styled-components'
 import { Machine } from 'xstate'
 import { Button } from './Button'
 
@@ -63,6 +61,24 @@ const stateMachine = Machine({
   }
 })
 
+const StyledContainer = styled(motion.div)`
+  align-content: start;
+  background-color: rgba(30, 27, 47, 0.8);
+  bottom: 0;
+  color: #fff;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: 40px auto;
+  justify-content: end;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-290px);
+  width: 380px;
+  z-index: 9999;
+`;
+
 export const Menu: React.FC<Props> = ({ setStatus }) => {
   const controls = useAnimation()
 
@@ -97,25 +113,8 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
   let label = nextMessage === 'OPEN' ? 'open' : 'close'
 
   return (
-    <motion.div
+    <StyledContainer
       animate={controls}
-      css={css`
-        align-content: start;
-        background-color: rgba(30, 27, 47, 0.8);
-        bottom: 0;
-        color: #fff;
-        display: grid;
-        grid-row-gap: 10px;
-        grid-template-rows: 40px auto;
-        justify-content: end;
-        left: 0;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        transform: translateX(-290px);
-        width: 380px;
-        z-index: 9999;
-      `}
       initial="closed"
       transition={transition}
       variants={variants}
@@ -128,6 +127,6 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
       >
         {label}
       </Button>
-    </motion.div>
+    </StyledContainer>
   )
 }

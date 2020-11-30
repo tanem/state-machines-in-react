@@ -1,21 +1,14 @@
-/** @jsx jsx */
+import * as React from 'react';
+import styled from 'styled-components';
 
-import { css, jsx } from '@emotion/core'
-import * as React from 'react'
+const StyledDiv = styled.div`
+  border: 2px solid rebeccapurple;
+  color: rebeccapurple;
+  padding: 1rem;
+`;
 
-interface Props {
-  children: React.ReactNode
-}
-
-export const MenuStatus: React.FC<Props> = ({ children }) => (
-  <div
-    css={css`
-      border: 2px solid rebeccapurple;
-      color: rebeccapurple;
-      padding: 1rem;
-    `}
-    data-testid="menu-status"
-  >
+export const MenuStatus: React.FC = ({ children }) => (
+  <StyledDiv data-testid="menu-status">
     {children}
-  </div>
+  </StyledDiv>
 )
