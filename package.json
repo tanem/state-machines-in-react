@@ -14,7 +14,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
-    "@types/jest": "26.0.16",
+    "@types/jest": "26.0.19",
     "@types/mousetrap": "1.6.5",
     "@types/node": "12.12.21",
     "@types/react": "17.0.0",
