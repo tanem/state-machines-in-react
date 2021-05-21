@@ -16,7 +16,7 @@
     "@testing-library/react": "11.2.7",
     "@types/jest": "26.0.23",
     "@types/mousetrap": "1.6.8",
-    "@types/node": "12.20.13",
+    "@types/node": "14.17.0",
     "@types/react": "17.0.6",
     "@types/react-dom": "17.0.5",
     "@types/styled-components": "5.1.9",
