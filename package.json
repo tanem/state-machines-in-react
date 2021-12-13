@@ -22,7 +22,7 @@
     "@types/styled-components": "5.1.17",
     "@xstate/react": "1.6.3",
     "framer-motion": "5.4.5",
-    "jest": "27.4.3",
+    "jest": "27.4.4",
     "jest-environment-jsdom-sixteen": "1.0.3",
     "mousetrap": "1.6.5",
     "prettier": "2.5.1",
