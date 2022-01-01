@@ -14,16 +14,15 @@
   "dependencies": {
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
-    "@types/jest": "27.0.3",
+    "@types/jest": "27.4.0",
     "@types/mousetrap": "1.6.9",
-    "@types/node": "16.11.17",
+    "@types/node": "17.0.6",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@types/styled-components": "5.1.19",
     "@xstate/react": "1.6.3",
     "framer-motion": "5.5.5",
     "jest": "27.4.5",
-    "jest-environment-jsdom-sixteen": "1.0.3",
     "mousetrap": "1.6.5",
     "prettier": "2.5.1",
     "react": "17.0.2",
@@ -31,12 +30,12 @@
     "react-scripts": "5.0.0",
     "styled-components": "5.3.3",
     "typescript": "4.5.4",
-    "xstate": "4.26.1"
+    "xstate": "4.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
