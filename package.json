@@ -30,7 +30,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "5.3.5",
     "typescript": "4.8.2",
-    "xstate": "4.33.4"
+    "xstate": "4.33.5"
   },
   "scripts": {
     "start": "react-scripts start",
