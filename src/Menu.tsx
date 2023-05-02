@@ -13,18 +13,18 @@ interface Props {
 const transition: Transition = {
   damping: 20,
   stiffness: 300,
-  type: 'spring'
+  type: 'spring',
 }
 
 const variants: Variants = {
   closed: {
     backdropFilter: 'blur(0px)',
-    x: -290
+    x: -290,
   },
   open: {
     backdropFilter: 'blur(2px)',
-    x: 0
-  }
+    x: 0,
+  },
 }
 
 const stateMachine = Machine({
@@ -32,33 +32,33 @@ const stateMachine = Machine({
   states: {
     closed: {
       on: {
-        OPEN: 'opening'
-      }
+        OPEN: 'opening',
+      },
     },
     opening: {
       invoke: {
         src: 'openMenu',
-        onDone: { target: 'open' }
+        onDone: { target: 'open' },
       },
       on: {
-        CLOSE: 'closing'
-      }
+        CLOSE: 'closing',
+      },
     },
     open: {
       on: {
-        CLOSE: 'closing'
-      }
+        CLOSE: 'closing',
+      },
     },
     closing: {
       invoke: {
         src: 'closeMenu',
-        onDone: { target: 'closed' }
+        onDone: { target: 'closed' },
       },
       on: {
-        OPEN: 'opening'
-      }
-    }
-  }
+        OPEN: 'opening',
+      },
+    },
+  },
 })
 
 const StyledContainer = styled(motion.div)`
@@ -77,7 +77,7 @@ const StyledContainer = styled(motion.div)`
   transform: translateX(-290px);
   width: 380px;
   z-index: 9999;
-`;
+`
 
 export const Menu: React.FC<Props> = ({ setStatus }) => {
   const controls = useAnimation()
@@ -88,8 +88,8 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
   const [state, send] = useMachine(stateMachine, {
     services: {
       openMenu,
-      closeMenu
-    }
+      closeMenu,
+    },
   })
 
   React.useEffect(() => {

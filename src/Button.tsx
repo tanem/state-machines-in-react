@@ -22,11 +22,12 @@ const StyledButton = styled.button`
   }
 `
 
-export const Button: React.FC<Props> = ({ children, onClick, testId }) => (
-  <StyledButton
-    data-testid={testId}
-    onClick={onClick}
-  >
+export const Button: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  onClick,
+  testId,
+}) => (
+  <StyledButton data-testid={testId} onClick={onClick}>
     {children}
   </StyledButton>
 )
