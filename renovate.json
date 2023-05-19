@@ -8,5 +8,13 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "stabilityDays": 3
+  "stabilityDays": 3,
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "typescript"
+      ],
+      "allowedVersions": "< 5.0.0"
+    }
+  ]
 }
