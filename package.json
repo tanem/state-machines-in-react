@@ -15,7 +15,7 @@
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "14.0.0",
-    "@types/jest": "29.5.4",
+    "@types/jest": "29.5.5",
     "@types/mousetrap": "1.6.11",
     "@types/node": "18.17.16",
     "@types/react": "18.2.21",
