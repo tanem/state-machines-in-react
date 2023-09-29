@@ -18,7 +18,7 @@
     "@types/jest": "29.5.5",
     "@types/mousetrap": "1.6.11",
     "@types/node": "18.18.0",
-    "@types/react": "18.2.22",
+    "@types/react": "18.2.23",
     "@types/react-dom": "18.2.7",
     "@types/styled-components": "5.1.28",
     "@xstate/react": "3.2.2",
