@@ -1,5 +1,5 @@
 import { useActor } from '@xstate/react'
-import { motion, Transition, useAnimation, Variants } from 'framer-motion'
+import { motion, Transition, useAnimation, Variants } from 'motion/react'
 import * as React from 'react'
 import styled from 'styled-components'
 import { fromPromise, setup } from 'xstate'
