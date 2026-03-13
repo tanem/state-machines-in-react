@@ -15,7 +15,7 @@ A small React + TypeScript demo showing a slide-out menu driven by an XState sta
 - [Framer Motion](https://www.framer.com/motion/) — animation
 - [styled-components](https://styled-components.com/) — CSS-in-JS
 - [Mousetrap](https://craig.is/killing/mice) — keyboard shortcuts
-- Build tooling: Create React App (react-scripts)
+- Build tooling: Vite with `@vitejs/plugin-react`
 
 ### Structure
 
@@ -25,9 +25,11 @@ A small React + TypeScript demo showing a slide-out menu driven by an XState sta
   - `Menu.tsx` — state machine definition, animation logic, keyboard handling
   - `Button.tsx`, `Container.tsx`, `Content.tsx`, `MenuStatus.tsx` — presentational components
   - `App.test.tsx` — integration tests (Testing Library)
-  - `setupTests.ts` — test framework setup (imports `@testing-library/jest-dom`)
+  - `setupTests.ts` — test framework setup (imports `@testing-library/jest-dom/vitest`)
   - `styles.css` — global styles
-- `public/` — static assets and HTML template
+- `index.html` — HTML entry point (root of project, references `/src/index.tsx`)
+- `public/` — static assets
+- `vite.config.ts` — Vite and Vitest configuration
 - `.github/workflows/ci.yml` — CI pipeline
 
 ## Code style
@@ -46,7 +48,8 @@ A small React + TypeScript demo showing a slide-out menu driven by an XState sta
 
 ## Testing
 
-- Tests use React Testing Library with `@testing-library/jest-dom` matchers.
+- Tests use React Testing Library with `@testing-library/jest-dom/vitest` matchers.
+- Test runner is Vitest (configured in `vite.config.ts`).
 - Test files sit alongside source files with a `.test.tsx` suffix.
 - Prefer `getByTestId` / `getByRole` queries.
 - Use `waitFor` for async state transitions.
