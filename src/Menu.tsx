@@ -6,7 +6,7 @@ import { fromPromise, setup } from 'xstate'
 import { Button } from './Button'
 
 interface Props {
-  setStatus: React.Dispatch<any>
+  setStatus: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
 const transition: Transition = {

@@ -11,11 +11,11 @@ A small React + TypeScript demo showing a slide-out menu driven by an XState sta
 
 ### Key dependencies
 
-- [XState](https://xstate.js.org/) v4 — state machine library
+- [XState](https://xstate.js.org/) v5 — state machine library
 - [Framer Motion](https://www.framer.com/motion/) — animation
 - [styled-components](https://styled-components.com/) — CSS-in-JS
-- [Mousetrap](https://craig.is/killing/mice) — keyboard shortcuts
 - Build tooling: Vite with `@vitejs/plugin-react`
+- Linting: ESLint 9 with typescript-eslint (flat config in `eslint.config.mjs`)
 
 ### Structure
 
