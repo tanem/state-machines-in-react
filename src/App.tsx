@@ -5,7 +5,7 @@ import { Menu } from './Menu'
 import { MenuStatus } from './MenuStatus'
 
 export const App: React.FC = () => {
-  const [menuStatus, setMenuStatus] = React.useState()
+  const [menuStatus, setMenuStatus] = React.useState<string>()
 
   return (
     <Container>

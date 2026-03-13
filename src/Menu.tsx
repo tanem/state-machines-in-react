@@ -1,13 +1,12 @@
-import { useMachine } from '@xstate/react'
+import { useActor } from '@xstate/react'
 import { motion, Transition, useAnimation, Variants } from 'framer-motion'
-import Mousetrap from 'mousetrap'
 import * as React from 'react'
 import styled from 'styled-components'
-import { Machine } from 'xstate'
+import { fromPromise, setup } from 'xstate'
 import { Button } from './Button'
 
 interface Props {
-  setStatus: React.Dispatch<any>
+  setStatus: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
 const transition: Transition = {
@@ -27,7 +26,12 @@ const variants: Variants = {
   },
 }
 
-const stateMachine = Machine({
+const stateMachine = setup({
+  actors: {
+    openMenu: fromPromise(async () => {}),
+    closeMenu: fromPromise(async () => {}),
+  },
+}).createMachine({
   initial: 'closed',
   states: {
     closed: {
@@ -82,24 +86,30 @@ const StyledContainer = styled(motion.div)`
 export const Menu: React.FC<Props> = ({ setStatus }) => {
   const controls = useAnimation()
 
-  const openMenu = () => controls.start('open')
-  const closeMenu = () => controls.start('closed')
+  const machine = React.useMemo(
+    () =>
+      stateMachine.provide({
+        actors: {
+          openMenu: fromPromise(() => controls.start('open')),
+          closeMenu: fromPromise(() => controls.start('closed')),
+        },
+      }),
+    [controls]
+  )
 
-  const [state, send] = useMachine(stateMachine, {
-    services: {
-      openMenu,
-      closeMenu,
-    },
-  })
+  const [state, send] = useActor(machine)
 
   React.useEffect(() => {
-    const key = 'esc'
-    Mousetrap.bind(key, () => {
-      send('CLOSE')
-    })
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        send({ type: 'CLOSE' })
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
 
     return () => {
-      Mousetrap.unbind(key)
+      document.removeEventListener('keydown', handleKeyDown)
     }
   }, [send])
 
@@ -107,10 +117,10 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
     setStatus(state.value)
   }, [setStatus, state.value])
 
-  const nextMessage =
+  const nextEvent =
     state.value === 'open' || state.value === 'opening' ? 'CLOSE' : 'OPEN'
 
-  let label = nextMessage === 'OPEN' ? 'open' : 'close'
+  const label = nextEvent === 'OPEN' ? 'open' : 'close'
 
   return (
     <StyledContainer
@@ -121,7 +131,7 @@ export const Menu: React.FC<Props> = ({ setStatus }) => {
     >
       <Button
         onClick={() => {
-          send(nextMessage)
+          send({ type: nextEvent })
         }}
         testId="menu-button"
       >

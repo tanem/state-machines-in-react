@@ -1,20 +1,12 @@
 {
   "extends": [
-    "config:js-app",
+    "config:recommended",
     ":rebaseStalePrs",
     ":automergeAll",
-    ":masterIssue"
+    ":dependencyDashboard"
   ],
   "lockFileMaintenance": {
     "enabled": true
   },
-  "stabilityDays": 3,
-  "packageRules": [
-    {
-      "matchPackageNames": [
-        "typescript"
-      ],
-      "allowedVersions": "< 5.0.0"
-    }
-  ]
+  "stabilityDays": 3
 }
