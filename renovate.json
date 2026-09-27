@@ -8,5 +8,5 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "stabilityDays": 3
+  "minimumReleaseAge": "3 days"
 }
