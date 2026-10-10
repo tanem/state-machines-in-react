@@ -1,4 +1,5 @@
 {
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
   "extends": [
     "config:recommended",
     ":rebaseStalePrs",
@@ -6,7 +7,9 @@
     ":dependencyDashboard"
   ],
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "minimumReleaseAge": null
   },
-  "stabilityDays": 3
+  "minimumReleaseAge": "3 days",
+  "osvVulnerabilityAlerts": true
 }
